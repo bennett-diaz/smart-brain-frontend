@@ -82,7 +82,7 @@ class App extends Component {
     this.setState({ imageUrl: this.state.input }, () => {
       console.log('imageUrl:', this.state.imageUrl);
 
-      fetch('http://localhost:3002/clarifai', {
+      fetch('https://smart-brain-backend-a6vy.onrender.com/clarifai', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -94,7 +94,7 @@ class App extends Component {
           this.displayFaceBox(this.calculateFaceLocation(faceBox));
         })
         .catch(error => console.log('error', error));
-      fetch('http://localhost:3002/image', {
+      fetch('https://smart-brain-backend-a6vy.onrender.com/image', {
         method: 'put',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
